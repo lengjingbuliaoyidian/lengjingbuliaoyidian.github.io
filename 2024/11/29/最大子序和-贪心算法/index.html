@@ -5,7 +5,7 @@
 <head>
   
   <meta name="baidu-site-verification" content="code-J1Qg17G6wT" />
-  <title>download - 冷静不了一点</title>
+  <title>最大子序和-贪心算法 - 冷静不了一点</title>
   <meta charset="UTF-8">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
@@ -16,13 +16,15 @@
     <meta name="baidu-site-verification" content="code-J1Qg17G6wT" />
 
   <link rel="shortcut icon" href="/images/head/head.jpg" type="image/png" />
-  <meta property="og:type" content="website">
-<meta property="og:title" content="download">
-<meta property="og:url" content="http://example.com/download.html/index.html">
+  <meta name="description" content="最大子序和  给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。    例如：对于数组 [ -2, 1, -3, 4, -1, 2, 1, -5, 4 ] 它能够找出和最大的连续子数组（在这里是 [ 4, -1, 2, 1 ]，其和为 6） 并返回这个最大和的值。   Leetcode题目链接">
+<meta property="og:type" content="article">
+<meta property="og:title" content="最大子序和-贪心算法">
+<meta property="og:url" content="http://example.com/2024/11/29/%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%92%8C-%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/index.html">
 <meta property="og:site_name" content="冷静不了一点">
+<meta property="og:description" content="最大子序和  给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。    例如：对于数组 [ -2, 1, -3, 4, -1, 2, 1, -5, 4 ] 它能够找出和最大的连续子数组（在这里是 [ 4, -1, 2, 1 ]，其和为 6） 并返回这个最大和的值。   Leetcode题目链接">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-11-26T11:47:23.000Z">
-<meta property="article:modified_time" content="2024-11-26T11:47:23.550Z">
+<meta property="article:published_time" content="2024-11-29T03:25:53.000Z">
+<meta property="article:modified_time" content="2024-11-29T03:36:18.950Z">
 <meta property="article:author" content="lengjingbuliaoyidian">
 <meta name="twitter:card" content="summary">
   <link rel="stylesheet" href="https://lib.baomitu.com/highlight.js/9.15.8/styles/atom-one-dark.min.css" crossorigin>
@@ -33,7 +35,7 @@
   
     <link rel="stylesheet" href="//at.alicdn.com/t/font_2421060_8z08qcz5sq3.css">
   
-  <link rel="stylesheet" href="/css/style.css?v=1732851404013">
+  <link rel="stylesheet" href="/css/style.css?v=1732851404017">
 <meta name="generator" content="Hexo 7.3.0"></head>
 
 <body class="mdui-drawer-body-left">
@@ -184,16 +186,15 @@
     <div class="nexmoe-primary">
         <div class="nexmoe-post">
     
-        <div class="nexmoe-post-cover"
-             style="padding-bottom: 24.305555555555554%;">
-            <img data-src="/images/background/xiaomai.jpg" data-sizes="auto" alt="download" class="lazyload">
-            <h1>download</h1>
+        <div class="nexmoe-post-cover" style="padding-bottom: NaN%;">
+            <img data-src="\images\process\process1.jpg" data-sizes="auto" alt="最大子序和-贪心算法" class="lazyload">
+            <h1>最大子序和-贪心算法</h1>
         </div>
     
 
         <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
-    <a><i class="nexmoefont icon-calendar-fill"></i>2024年11月26日</a>
-    <a><i class="nexmoefont icon-areachart"></i>0 字</a>
+    <a><i class="nexmoefont icon-calendar-fill"></i>2024年11月29日</a>
+    <a><i class="nexmoefont icon-areachart"></i>102 字</a>
     <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
 </div>
 
@@ -211,7 +212,25 @@
         </div>
 
         <article>
-            
+            <blockquote>
+<p>最大子序和</p>
+<blockquote>
+<p>给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。</p>
+</blockquote>
+</blockquote>
+<ul>
+<li>例如：对于数组 [ -2, 1, -3, 4, -1, 2, 1, -5, 4 ]</li>
+<li>它能够找出和最大的连续子数组（在这里是 [ 4, -1, 2, 1 ]，其和为 6）</li>
+<li>并返回这个最大和的值。<blockquote>
+<blockquote>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/maximum-subarray/description/">Leetcode题目链接</a></p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+</ul>
+
         </article>
 
         
@@ -219,7 +238,7 @@
   <div class="nexmoe-post-copyright">
     <strong>本文作者：</strong>lengjingbuliaoyidian<br>
     
-    <strong>本文链接：</strong><a href="http://example.com/download.html/index.html" title="http:&#x2F;&#x2F;example.com&#x2F;download.html&#x2F;index.html" target="_blank" rel="noopener">http:&#x2F;&#x2F;example.com&#x2F;download.html&#x2F;index.html</a><br>
+    <strong>本文链接：</strong><a href="http://example.com/2024/11/29/%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%92%8C-%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/" title="http:&#x2F;&#x2F;example.com&#x2F;2024&#x2F;11&#x2F;29&#x2F;%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%92%8C-%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;example.com&#x2F;2024&#x2F;11&#x2F;29&#x2F;%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%92%8C-%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95&#x2F;</a><br>
 
     
       <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
@@ -963,7 +982,7 @@
 <script src="/lib/fancybox/js/jquery.fancybox.min.js"></script>
 
 
-<script src="/js/app.js?v=1732851404014"></script>
+<script src="/js/app.js?v=1732851404017"></script>
 
 <script src="https://lib.baomitu.com/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js"></script>
 <script>
