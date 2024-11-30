@@ -31,7 +31,7 @@
   
     <link rel="stylesheet" href="//at.alicdn.com/t/font_2421060_8z08qcz5sq3.css">
   
-  <link rel="stylesheet" href="/css/style.css?v=1732957412477">
+  <link rel="stylesheet" href="/css/style.css?v=1732957876778">
 <meta name="generator" content="Hexo 7.3.0"></head>
 
 <body class="mdui-drawer-body-left">
@@ -252,7 +252,7 @@
 <li>思路:</li>
 </ol>
 <p>-<br>4. 代码如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public int uniquePaths(int m, int n) &#123;</span><br><span class="line">        //定义一个dp的二维数组</span><br><span class="line">        int[][] dp=new int[m][n];</span><br><span class="line">        //初始化dp[i][0]和dp[0][i]</span><br><span class="line">        for(int i=0;i&lt;m;i++)&#123;</span><br><span class="line">            dp[i][0]=1;</span><br><span class="line">        &#125;</span><br><span class="line">        for(int i=0;i&lt;n;i++)&#123;</span><br><span class="line">            dp[0][i]=1;</span><br><span class="line">        &#125;</span><br><span class="line">        //深推递推公式</span><br><span class="line">       </span><br><span class="line">        for (int i = 1; i &lt; m; i++) &#123;</span><br><span class="line">            for (int j = 1; j &lt; n; j++) &#123;</span><br><span class="line">                dp[i][j] = dp[i-1][j]+dp[i][j-1];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">         return dp[m-1][n-1];</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">uniquePaths</span><span class="params">(<span class="type">int</span> m, <span class="type">int</span> n)</span> &#123;</span><br><span class="line">        <span class="comment">//定义一个dp的二维数组</span></span><br><span class="line">        <span class="type">int</span>[][] dp=<span class="keyword">new</span> <span class="title class_">int</span>[m][n];</span><br><span class="line">        <span class="comment">//初始化dp[i][0]和dp[0][i]</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;m;i++)&#123;</span><br><span class="line">            dp[i][<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">            dp[<span class="number">0</span>][i]=<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//深推递推公式</span></span><br><span class="line">       </span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt; m; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">1</span>; j &lt; n; j++) &#123;</span><br><span class="line">                dp[i][j] = dp[i-<span class="number">1</span>][j]+dp[i][j-<span class="number">1</span>];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">         <span class="keyword">return</span> dp[m-<span class="number">1</span>][n-<span class="number">1</span>];</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
             
         </article>
@@ -1023,7 +1023,7 @@
 <script src="/lib/fancybox/js/jquery.fancybox.min.js"></script>
 
 
-<script src="/js/app.js?v=1732957412477"></script>
+<script src="/js/app.js?v=1732957876779"></script>
 
 <script src="https://lib.baomitu.com/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js"></script>
 <script>
@@ -1046,8 +1046,6 @@
 
 <script src="/js/search.js"></script>
 
-<script src="/js/webapp.js"></script>
-
 <script src="https://lib.baomitu.com/clipboard.js/2.0.8/clipboard.min.js"></script>
 
 <script src="/lib/codeBlock/codeBlockFuction.js"></script>
@@ -1059,6 +1057,8 @@
 <script src="/lib/codeBlock/codeShrink.js"></script>
 
 <link rel="stylesheet" href="/lib/codeBlock/matery.css">
+
+<script src="/js/webapp.js"></script>
 <!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
 
