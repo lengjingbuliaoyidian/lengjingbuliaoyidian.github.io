@@ -31,7 +31,7 @@
   
     <link rel="stylesheet" href="//at.alicdn.com/t/font_2421060_8z08qcz5sq3.css">
   
-  <link rel="stylesheet" href="/css/style.css?v=1732934891011">
+  <link rel="stylesheet" href="/css/style.css?v=1732935183374">
 <meta name="generator" content="Hexo 7.3.0"></head>
 
 <body class="mdui-drawer-body-left">
@@ -256,9 +256,8 @@
 </ul>
 <ol start="3">
 <li>那么就是贪心算法(其实也还有其他的解法，例如：dp动态规划)</li>
-<li>代码：</li>
+<li>代码：     <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">  <span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">  <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">maxSubArray</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (nums.length == <span class="number">1</span>)&#123;</span><br><span class="line">          <span class="keyword">return</span> nums[<span class="number">0</span>];</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="type">int</span> <span class="variable">sum</span> <span class="operator">=</span> Integer.MIN_VALUE; <span class="comment">//sum：用于记录在遍历数组过程中找到的最大子数组的和，</span></span><br><span class="line">      <span class="comment">//初始化为 Integer.MIN_VALUE（Java 中 int 类型能表示的最小值），这样可以确保后续在比较和更新最大和时，任何有效的子数组和都能够比初始值大，从而可以正确地更新 sum 的值。</span></span><br><span class="line">      <span class="type">int</span> <span class="variable">count</span> <span class="operator">=</span> <span class="number">0</span>; <span class="comment">//count：用于累计当前正在考虑的连续子数组的元素和，初始化为 0，随着遍历数组不断累加元素的值来更新这个累计和</span></span><br><span class="line">      <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; nums.length; i++)&#123;</span><br><span class="line">          count += nums[i];</span><br><span class="line">          sum = Math.max(sum, count); <span class="comment">// 取区间累计的最大值（相当于不断确定最大子序终止位置）</span></span><br><span class="line">          <span class="keyword">if</span> (count &lt;= <span class="number">0</span>)&#123;</span><br><span class="line">              count = <span class="number">0</span>; <span class="comment">// 相当于重置最大子序起始位置，因为遇到负数一定是拉低总和</span></span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">     <span class="keyword">return</span> sum;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 </ol>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">    <span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">maxSubArray</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (nums.length == <span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> nums[<span class="number">0</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> <span class="variable">sum</span> <span class="operator">=</span> Integer.MIN_VALUE; <span class="comment">//sum：用于记录在遍历数组过程中找到的最大子数组的和，</span></span><br><span class="line">        <span class="comment">//初始化为 Integer.MIN_VALUE（Java 中 int 类型能表示的最小值），这样可以确保后续在比较和更新最大和时，任何有效的子数组和都能够比初始值大，从而可以正确地更新 sum 的值。</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">count</span> <span class="operator">=</span> <span class="number">0</span>; <span class="comment">//count：用于累计当前正在考虑的连续子数组的元素和，初始化为 0，随着遍历数组不断累加元素的值来更新这个累计和</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; nums.length; i++)&#123;</span><br><span class="line">            count += nums[i];</span><br><span class="line">            sum = Math.max(sum, count); <span class="comment">// 取区间累计的最大值（相当于不断确定最大子序终止位置）</span></span><br><span class="line">            <span class="keyword">if</span> (count &lt;= <span class="number">0</span>)&#123;</span><br><span class="line">                count = <span class="number">0</span>; <span class="comment">// 相当于重置最大子序起始位置，因为遇到负数一定是拉低总和</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">       <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
             
         </article>
@@ -979,7 +978,7 @@
 <script src="/lib/fancybox/js/jquery.fancybox.min.js"></script>
 
 
-<script src="/js/app.js?v=1732934891011"></script>
+<script src="/js/app.js?v=1732935183375"></script>
 
 <script src="https://lib.baomitu.com/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js"></script>
 <script>
@@ -998,8 +997,6 @@
 <!-- hexo injector body_end start -->
 <script src="/js/clock.js"></script>
 
-<script src="/js/webapp.js"></script>
-
 <script src="https://lib.baomitu.com/clipboard.js/2.0.8/clipboard.min.js"></script>
 
 <script src="/lib/codeBlock/codeBlockFuction.js"></script>
@@ -1015,6 +1012,8 @@
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 
 <script src="/js/search.js"></script>
+
+<script src="/js/webapp.js"></script>
 <!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
 
