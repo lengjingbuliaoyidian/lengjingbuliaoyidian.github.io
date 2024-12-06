@@ -31,7 +31,7 @@
   
     <link rel="stylesheet" href="//at.alicdn.com/t/font_2421060_8z08qcz5sq3.css">
   
-  <link rel="stylesheet" href="/css/style.css?v=1733472042358">
+  <link rel="stylesheet" href="/css/style.css?v=1733472915368">
 <meta name="generator" content="Hexo 7.3.0"></head>
 
 <body class="mdui-drawer-body-left">
@@ -232,7 +232,7 @@
         
         <div class="nexmoe-post-meta nexmoe-rainbow">
             <a><i class="nexmoefont icon-calendar-fill"></i>2024年11月29日</a>
-            <a><i class="nexmoefont icon-areachart"></i>587 字</a>
+            <a><i class="nexmoefont icon-areachart"></i>582 字</a>
             <a><i class="nexmoefont icon-time-circle-fill"></i>大概 2 分钟</a>
         </div>
         
@@ -254,34 +254,50 @@
 <li>说实话一开始看到这个题目，脑子的反应就是想用暴力解法，结果一试一试，还真行。哈哈。</li>
 </ol>
 <ul>
-<li>思路：暴力解法的思路，第一层 for 就是设置起始位置，第二层 for 循环遍历数组寻找最大值，代码如下：<br>  class Solution {<br>public int maxSubArray(int[] nums) {<br>int result &#x3D;Integer.MIN_VALUE;<br>int count &#x3D; 0;<br>for (int i &#x3D; 0; i &lt; nums.length; i++) { &#x2F;&#x2F; 设置起始位置<br>    count &#x3D; 0;<br>    for (int j &#x3D; i; j &lt; nums.length; j++) { &#x2F;&#x2F; 每次从起始位置i开始遍历寻找最大值<br>        count +&#x3D; nums[j];<br>        result &#x3D; count &gt; result ? count : result;<br>    }<br>}<br>return result;<br>}</li>
+<li>思路：暴力解法的思路，第一层 for 就是设置起始位置，第二层 for 循环遍历数组寻找最大值。</li>
 </ul>
-<p>}</p>
-<pre><code>- 但是时间复杂度：O(n^2)
-- 空间复杂度：O(1)，不推荐，还有更好的算法
-3. 那么就是贪心算法(其实也还有其他的解法，例如：dp动态规划)
-4. 代码：   
- 
-  class Solution &#123;
-    public int maxSubArray(int[] nums) &#123;
-        if (nums.length == 1)&#123;
-            return nums[0];
+<h2 id="代码如下："><a href="#代码如下：" class="headerlink" title="代码如下："></a>代码如下：</h2><pre><code>class Solution &#123;
+public int maxSubArray(int[] nums) &#123;
+    int result =Integer.MIN_VALUE;
+    int count = 0;
+    for (int i = 0; i &lt; nums.length; i++) &#123; // 设置起始位置
+        count = 0;
+        for (int j = i; j &lt; nums.length; j++) &#123; // 每次从起始位置i开始遍历寻找最大值
+            count += nums[j];
+            result = count &gt; result ? count : result;
         &#125;
-        int sum = Integer.MIN_VALUE; //sum：用于记录在遍历数组过程中找到的最大子数组的和，
-        //初始化为 Integer.MIN_VALUE（Java 中 int 类型能表示的最小值），这样可以确保后续在比较和更新最大和时，任何有效的子数组和都能够比初始值大，从而可以正确地更新 sum 的值。
-        int count = 0; //count：用于累计当前正在考虑的连续子数组的元素和，初始化为 0，随着遍历数组不断累加元素的值来更新这个累计和
-        for (int i = 0; i &lt; nums.length; i++)&#123;
-            count += nums[i];
-            sum = Math.max(sum, count); // 取区间累计的最大值（相当于不断确定最大子序终止位置）
-            if (count &lt;= 0)&#123;
-                count = 0; // 相当于重置最大子序起始位置，因为遇到负数一定是拉低总和
-            &#125;
-        &#125;
-       return sum;
     &#125;
-  &#125;
-  
-    
+    return result;
+
+
+&#125;
+&#125;
+</code></pre>
+<ul>
+<li>但是时间复杂度：O(n^2)</li>
+<li>空间复杂度：O(1)，不推荐，还有更好的算法</li>
+</ul>
+<ol start="3">
+<li>那么就是贪心算法(其实也还有其他的解法，例如：dp动态规划)</li>
+</ol>
+<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><pre><code>class Solution &#123;
+public int maxSubArray(int[] nums) &#123;
+    if (nums.length == 1)&#123;
+        return nums[0];
+    &#125;
+    int sum = Integer.MIN_VALUE; //sum：用于记录在遍历数组过程中找到的最大子数组的和，
+    //初始化为 Integer.MIN_VALUE（Java 中 int 类型能表示的最小值），这样可以确保后续在比较和更新最大和时，任何有效的子数组和都能够比初始值大，从而可以正确地更新 sum 的值。
+    int count = 0; //count：用于累计当前正在考虑的连续子数组的元素和，初始化为 0，随着遍历数组不断累加元素的值来更新这个累计和
+    for (int i = 0; i &lt; nums.length; i++)&#123;
+        count += nums[i];
+        sum = Math.max(sum, count); // 取区间累计的最大值（相当于不断确定最大子序终止位置）
+        if (count &lt;= 0)&#123;
+            count = 0; // 相当于重置最大子序起始位置，因为遇到负数一定是拉低总和
+        &#125;
+    &#125;
+   return sum;
+&#125;
+&#125;
 </code></pre>
 
             
@@ -1003,7 +1019,7 @@
 <script src="/lib/fancybox/js/jquery.fancybox.min.js"></script>
 
 
-<script src="/js/app.js?v=1733472042358"></script>
+<script src="/js/app.js?v=1733472915368"></script>
 
 <script src="https://lib.baomitu.com/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js"></script>
 <script>

@@ -31,7 +31,7 @@
   
     <link rel="stylesheet" href="//at.alicdn.com/t/font_2421060_8z08qcz5sq3.css">
   
-  <link rel="stylesheet" href="/css/style.css?v=1733472042355">
+  <link rel="stylesheet" href="/css/style.css?v=1733472915363">
 <meta name="generator" content="Hexo 7.3.0"></head>
 
 <body class="mdui-drawer-body-left">
@@ -232,7 +232,7 @@
         
         <div class="nexmoe-post-meta nexmoe-rainbow">
             <a><i class="nexmoefont icon-calendar-fill"></i>2024年12月06日</a>
-            <a><i class="nexmoefont icon-areachart"></i>476 字</a>
+            <a><i class="nexmoefont icon-areachart"></i>477 字</a>
             <a><i class="nexmoefont icon-time-circle-fill"></i>大概 2 分钟</a>
         </div>
         
@@ -284,8 +284,8 @@ public static void main(String[] args)&#123;
     &#125;
     System.out.println(dp[N][V]);
 &#125;
+&#125;
 </code></pre>
-<p>}</p>
 <h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2>
             
         </article>
@@ -322,8 +322,8 @@ public static void main(String[] args)&#123;
 <li>公开课：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1ve4y1x7Eu/">不同路径I</a></li>
 <li>思路:</li>
 </ol>
-<p>-<br>4. 代码如下：</p>
-<pre><code>class Solution &#123;
+<p>- </p>
+<h2 id="代码如下："><a href="#代码如下：" class="headerlink" title="代码如下："></a>代码如下：</h2><pre><code>class Solution &#123;
 public int uniquePaths(int m, int n) &#123;
     //定义一个dp的二维数组
     int[][] dp=new int[m][n];
@@ -344,8 +344,8 @@ public int uniquePaths(int m, int n) &#123;
      return dp[m-1][n-1];
     
 &#125;
+&#125;
 </code></pre>
-<p>}</p>
 
             
         </article>
@@ -363,7 +363,7 @@ public int uniquePaths(int m, int n) &#123;
         
         <div class="nexmoe-post-meta nexmoe-rainbow">
             <a><i class="nexmoefont icon-calendar-fill"></i>2024年11月30日</a>
-            <a><i class="nexmoefont icon-areachart"></i>948 字</a>
+            <a><i class="nexmoefont icon-areachart"></i>907 字</a>
             <a><i class="nexmoefont icon-time-circle-fill"></i>大概 4 分钟</a>
         </div>
         
@@ -383,20 +383,82 @@ public int uniquePaths(int m, int n) &#123;
 <li>题解：创建了二维数组 dp，其中 dp[i][j] 表示在前 i 个物品中，当背包容量为 j 时所能获得的最大价值，通过这样使用二维数组的动态规划方法，全面地考虑了放入和不放入每个物品的各种情况，最终准确地求出满足条件的背包能够装入物品的最大总价值。</li>
 <li>代码：</li>
 </ul>
-<ol>
-<li><p>二维数组dp数组</p>
-<p> import java.util.Scanner;</p>
-<p> public class Main {<br> public static void main(String[] args) {<br> Scanner scanner &#x3D; new Scanner(System.in);<br> &#x2F;&#x2F; 读取物品数量N和背包容积V<br> int N &#x3D; scanner.nextInt();<br> int V &#x3D; scanner.nextInt();<br><br> &#x2F;&#x2F; 分别用于存储物品的体积和价值，数组下标从1开始使用，方便对应物品编号<br> int[] v &#x3D; new int[N + 1];<br> int[] w &#x3D; new int[N + 1];<br> for (int i &#x3D; 1; i &lt;&#x3D; N; i++) {<br>     v[i] &#x3D; scanner.nextInt();<br>     w[i] &#x3D; scanner.nextInt();<br> }<br><br> &#x2F;&#x2F; dp[i][j]表示在前i个物品中，背包容量为j时能获得的最大价值<br> int[][] dp &#x3D; new int[N + 1][V + 1];<br><br> &#x2F;&#x2F; 初始化边界情况，当没有物品可选（i &#x3D; 0）时，无论背包容量是多少，最大价值都为0<br> for (int j &#x3D; 0; j &lt;&#x3D; V; j++) {<br>     dp[0][j] &#x3D; 0;<br> }<br><br> &#x2F;&#x2F; 动态规划核心逻辑，通过两层循环来填充dp数组<br> for (int i &#x3D; 1; i &lt;&#x3D; N; i++) {<br>     for (int j &#x3D; 0; j &lt;&#x3D; V; j++) {<br>         if (j &gt;&#x3D; v[i]) {<br>             &#x2F;&#x2F; 如果背包容量j大于等于第i个物品的体积v[i]，可以选择放或不放该物品<br>             &#x2F;&#x2F; 取放与不放该物品能得到的最大价值<br>             dp[i][j] &#x3D; Math.max(dp[i - 1][j], dp[i - 1][j - v[i]] + w[i]);<br>         } else {<br>             &#x2F;&#x2F; 如果背包容量j小于第i个物品的体积v[i]，无法放入该物品，价值与前i - 1个物品时相同<br>             dp[i][j] &#x3D; dp[i - 1][j];<br>         }<br>     }<br> }<br><br> &#x2F;&#x2F; 输出在前N个物品中，背包容量为V时能获得的最大价值<br> System.out.println(dp[N][V]);<br> }</p>
-</li>
-</ol>
-<p>}</p>
-<ol start="2">
-<li><p>一维数组：</p>
-<p> import java.util.Scanner;</p>
-<p> public class KnapsackProblemOneDArray {<br> public static void main(String[] args) {<br> Scanner scanner &#x3D; new Scanner(System.in);<br> &#x2F;&#x2F; 读取物品数量N和背包容积V<br> int N &#x3D; scanner.nextInt();<br> int V &#x3D; scanner.nextInt();<br><br> &#x2F;&#x2F; 分别用于存储物品的体积和价值<br> int[] v &#x3D; new int[N + 1];<br> int[] w &#x3D; new int[N + 1];<br> for (int i &#x3D; 1; i &lt;&#x3D; N; i++) {<br>     v[i] &#x3D; scanner.nextInt();<br>     w[i] &#x3D; scanner.nextInt();<br> }<br><br> &#x2F;&#x2F; dp[j]表示背包容量为j时能获得的最大价值（使用一维数组进行优化）<br> int[] dp &#x3D; new int[V + 1];<br><br> &#x2F;&#x2F; 动态规划核心逻辑，通过两层嵌套循环来填充dp数组<br> for (int i &#x3D; 1; i &lt;&#x3D; N; i++) {<br>     &#x2F;&#x2F; 注意这里要从V开始逆序遍历到v[i]，避免重复使用更新后的数据<br>     for (int j &#x3D; V; j &gt;&#x3D; v[i]; j–) {<br>         dp[j] &#x3D; Math.max(dp[j], dp[j - v[i]] + w[i]);<br>     }<br> }<br><br> &#x2F;&#x2F; 输出背包容量为V时能获得的最大价值<br> System.out.println(dp[V]);<br> }</p>
-</li>
-</ol>
-<p>}</p>
+<h2 id="二维数组dp数组"><a href="#二维数组dp数组" class="headerlink" title="二维数组dp数组"></a>二维数组dp数组</h2><pre><code>import java.util.Scanner;
+public class Main &#123;
+public static void main(String[] args) &#123;
+    Scanner scanner = new Scanner(System.in);
+    // 读取物品数量N和背包容积V
+    int N = scanner.nextInt();
+    int V = scanner.nextInt();
+
+    // 分别用于存储物品的体积和价值，数组下标从1开始使用，方便对应物品编号
+    int[] v = new int[N + 1];
+    int[] w = new int[N + 1];
+    for (int i = 1; i &lt;= N; i++) &#123;
+        v[i] = scanner.nextInt();
+        w[i] = scanner.nextInt();
+    &#125;
+
+    // dp[i][j]表示在前i个物品中，背包容量为j时能获得的最大价值
+    int[][] dp = new int[N + 1][V + 1];
+
+    // 初始化边界情况，当没有物品可选（i = 0）时，无论背包容量是多少，最大价值都为0
+    for (int j = 0; j &lt;= V; j++) &#123;
+        dp[0][j] = 0;
+    &#125;
+
+    // 动态规划核心逻辑，通过两层循环来填充dp数组
+    for (int i = 1; i &lt;= N; i++) &#123;
+        for (int j = 0; j &lt;= V; j++) &#123;
+            if (j &gt;= v[i]) &#123;
+                // 如果背包容量j大于等于第i个物品的体积v[i]，可以选择放或不放该物品
+                // 取放与不放该物品能得到的最大价值
+                dp[i][j] = Math.max(dp[i - 1][j], dp[i - 1][j - v[i]] + w[i]);
+            &#125; else &#123;
+                // 如果背包容量j小于第i个物品的体积v[i]，无法放入该物品，价值与前i - 1个物品时相同
+                dp[i][j] = dp[i - 1][j];
+            &#125;
+        &#125;
+    &#125;
+
+    // 输出在前N个物品中，背包容量为V时能获得的最大价值
+    System.out.println(dp[N][V]);
+
+&#125;
+&#125;
+</code></pre>
+<h2 id="一维数组："><a href="#一维数组：" class="headerlink" title="一维数组："></a>一维数组：</h2><pre><code>import java.util.Scanner;
+public class KnapsackProblemOneDArray &#123;
+public static void main(String[] args) &#123;
+    Scanner scanner = new Scanner(System.in);
+    // 读取物品数量N和背包容积V
+    int N = scanner.nextInt();
+    int V = scanner.nextInt();
+
+    // 分别用于存储物品的体积和价值
+    int[] v = new int[N + 1];
+    int[] w = new int[N + 1];
+    for (int i = 1; i &lt;= N; i++) &#123;
+        v[i] = scanner.nextInt();
+        w[i] = scanner.nextInt();
+    &#125;
+
+    // dp[j]表示背包容量为j时能获得的最大价值（使用一维数组进行优化）
+    int[] dp = new int[V + 1];
+
+    // 动态规划核心逻辑，通过两层嵌套循环来填充dp数组
+    for (int i = 1; i &lt;= N; i++) &#123;
+        // 注意这里要从V开始逆序遍历到v[i]，避免重复使用更新后的数据
+        for (int j = V; j &gt;= v[i]; j--) &#123;
+            dp[j] = Math.max(dp[j], dp[j - v[i]] + w[i]);
+        &#125;
+    &#125;
+
+    // 输出背包容量为V时能获得的最大价值
+    System.out.println(dp[V]);
+ &#125;
+&#125;
+</code></pre>
 
             
         </article>
@@ -1117,7 +1179,7 @@ public int uniquePaths(int m, int n) &#123;
 <script src="/lib/fancybox/js/jquery.fancybox.min.js"></script>
 
 
-<script src="/js/app.js?v=1733472042355"></script>
+<script src="/js/app.js?v=1733472915364"></script>
 
 <script src="https://lib.baomitu.com/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js"></script>
 <script>
