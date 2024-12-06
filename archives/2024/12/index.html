@@ -31,7 +31,7 @@
   
     <link rel="stylesheet" href="//at.alicdn.com/t/font_2421060_8z08qcz5sq3.css">
   
-  <link rel="stylesheet" href="/css/style.css?v=1733463964627">
+  <link rel="stylesheet" href="/css/style.css?v=1733464176172">
 <meta name="generator" content="Hexo 7.3.0"></head>
 
 <body class="mdui-drawer-body-left">
@@ -232,7 +232,7 @@
         
         <div class="nexmoe-post-meta nexmoe-rainbow">
             <a><i class="nexmoefont icon-calendar-fill"></i>2024年12月06日</a>
-            <a><i class="nexmoefont icon-areachart"></i>475 字</a>
+            <a><i class="nexmoefont icon-areachart"></i>476 字</a>
             <a><i class="nexmoefont icon-time-circle-fill"></i>大概 2 分钟</a>
         </div>
         
@@ -248,8 +248,45 @@
 <p>输出格式：<br>输出一个整数，表示最大价值。</p>
 <p>数据范围：<br>0&lt;N,V≤1000<br>0&lt;vi,wi≤1000</p>
 <p>输入样例<br>4 5<br>1 2<br>2 4<br>3 4<br>4 5<br>输出样例：<br>10</p>
-<p>-题解：<br>1.二维数组：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import java.util.Scanner;</span><br><span class="line">public class Main&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        Scanner sc=new Scanner(System.in);</span><br><span class="line">        //读取物品得数量和背包得体积</span><br><span class="line">        int N=sc.nextInt();</span><br><span class="line">        int V=sc.nextInt();</span><br><span class="line">        </span><br><span class="line">        // 分别用于存储物品的体积和价值，数组下标从1开始使用，方便对应物品编号</span><br><span class="line">        int[] v=new int[N+1];</span><br><span class="line">        int[] w=new int[N+1];</span><br><span class="line">        for(int i=1;i&lt;=N;i++)&#123;</span><br><span class="line">            v[i]=sc.nextInt();</span><br><span class="line">            w[i]=sc.nextInt();</span><br><span class="line">        &#125;</span><br><span class="line">        //定义一个二维dp数组，通过两层循环来填充dp数组，dp[i][j]表示在前i个物品中，背包容量为j时能获得的最大价值</span><br><span class="line">        int[][] dp = new int[N + 1][V + 1];</span><br><span class="line"></span><br><span class="line">        // 初始化边界情况，当没有物品可选（i = 0）时，无论背包容量是多少，最大价值都为0</span><br><span class="line">        for (int j = 0; j &lt;= V; j++) &#123;</span><br><span class="line">            dp[0][j] = 0;</span><br><span class="line">        &#125;</span><br><span class="line">        //核心代码：</span><br><span class="line">        for(int i=1;i&lt;=N;i++)&#123;</span><br><span class="line">            for(int j=0;j&lt;=V;j++)&#123;</span><br><span class="line">                //如果装得下</span><br><span class="line">                if(j&gt;=v[i])&#123;</span><br><span class="line">                    dp[i][j]=Math.max(dp[i][j-v[i]]+w[i],dp[i-1][j]);</span><br><span class="line">                &#125;else&#123;</span><br><span class="line">                    dp[i][j]=dp[i-1][j];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(dp[N][V]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>-题解：</p>
+<h2 id="1-二维数组"><a href="#1-二维数组" class="headerlink" title="1.二维数组:"></a>1.二维数组:</h2><pre><code>import java.util.Scanner;
+public class Main&#123;
+public static void main(String[] args)&#123;
+    Scanner sc=new Scanner(System.in);
+    //读取物品得数量和背包得体积
+    int N=sc.nextInt();
+    int V=sc.nextInt();
+    
+    // 分别用于存储物品的体积和价值，数组下标从1开始使用，方便对应物品编号
+    int[] v=new int[N+1];
+    int[] w=new int[N+1];
+    for(int i=1;i&lt;=N;i++)&#123;
+        v[i]=sc.nextInt();
+        w[i]=sc.nextInt();
+    &#125;
+    //定义一个二维dp数组，通过两层循环来填充dp数组，dp[i][j]表示在前i个物品中，背包容量为j时能获得的最大价值
+    int[][] dp = new int[N + 1][V + 1];
+
+    // 初始化边界情况，当没有物品可选（i = 0）时，无论背包容量是多少，最大价值都为0
+    for (int j = 0; j &lt;= V; j++) &#123;
+        dp[0][j] = 0;
+    &#125;
+    //核心代码：
+    for(int i=1;i&lt;=N;i++)&#123;
+        for(int j=0;j&lt;=V;j++)&#123;
+            //如果装得下
+            if(j&gt;=v[i])&#123;
+                dp[i][j]=Math.max(dp[i][j-v[i]]+w[i],dp[i-1][j]);
+            &#125;else&#123;
+                dp[i][j]=dp[i-1][j];
+            &#125;
+        &#125;
+    &#125;
+    System.out.println(dp[N][V]);
+&#125;
+</code></pre>
+<p>}</p>
+<h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2>
             
         </article>
     </div>
@@ -969,7 +1006,7 @@
 <script src="/lib/fancybox/js/jquery.fancybox.min.js"></script>
 
 
-<script src="/js/app.js?v=1733463964627"></script>
+<script src="/js/app.js?v=1733464176173"></script>
 
 <script src="https://lib.baomitu.com/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js"></script>
 <script>
