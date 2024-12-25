@@ -5,7 +5,7 @@
 <head>
   
   <meta name="baidu-site-verification" content="code-J1Qg17G6wT" />
-  <title>我的第一篇博客 - 冷静不了一点</title>
+  <title>Linux.md - 冷静不了一点</title>
   <meta charset="UTF-8">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
@@ -16,16 +16,17 @@
     <meta name="baidu-site-verification" content="code-J1Qg17G6wT" />
 
   <link rel="shortcut icon" href="/images/head/head.jpg" type="image/png" />
-  <meta name="description" content="最开始的学习阶段：数据结构 一刷leetcode:学习参考代码随想录，里面自带有题目">
+  <meta name="description" content="前提 下好虚拟机后，记得每一次做任务前最好做好快照(血泪的教训) 掌握主机名&#x2F;IP地址等网络信息配置的方法(一定要保证号网络可用，不然后面吃大亏，下点软件都用不来哦。)   设置IP地址：  直接在终端运行nmtui命令配置网络(图形界面自己会了)。修改后使用systemctl restart NetworkManager 命令重启，使IP更改信息生效。 nmcli命令配置网络，Ubun">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我的第一篇博客">
-<meta property="og:url" content="http://example.com/2024/11/29/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/index.html">
+<meta property="og:title" content="Linux.md">
+<meta property="og:url" content="http://example.com/2024/12/09/Linux-md/index.html">
 <meta property="og:site_name" content="冷静不了一点">
-<meta property="og:description" content="最开始的学习阶段：数据结构 一刷leetcode:学习参考代码随想录，里面自带有题目">
+<meta property="og:description" content="前提 下好虚拟机后，记得每一次做任务前最好做好快照(血泪的教训) 掌握主机名&#x2F;IP地址等网络信息配置的方法(一定要保证号网络可用，不然后面吃大亏，下点软件都用不来哦。)   设置IP地址：  直接在终端运行nmtui命令配置网络(图形界面自己会了)。修改后使用systemctl restart NetworkManager 命令重启，使IP更改信息生效。 nmcli命令配置网络，Ubun">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-11-29T02:48:37.000Z">
-<meta property="article:modified_time" content="2024-11-29T07:15:30.760Z">
+<meta property="article:published_time" content="2024-12-09T12:39:26.000Z">
+<meta property="article:modified_time" content="2024-12-25T03:02:11.389Z">
 <meta property="article:author" content="lengjingbuliaoyidian">
+<meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
   <link rel="stylesheet" href="https://lib.baomitu.com/highlight.js/9.15.8/styles/atom-one-dark.min.css" crossorigin>
   <link rel="stylesheet" href="/lib/mdui_043tiny/css/mdui.css">
@@ -35,7 +36,7 @@
   
     <link rel="stylesheet" href="//at.alicdn.com/t/font_2421060_8z08qcz5sq3.css">
   
-  <link rel="stylesheet" href="/css/style.css?v=1735097330760">
+  <link rel="stylesheet" href="/css/style.css?v=1735097330755">
 <meta name="generator" content="Hexo 7.3.0"></head>
 
 <body class="mdui-drawer-body-left">
@@ -238,17 +239,16 @@
     <div class="nexmoe-primary">
         <div class="nexmoe-post">
     
-        <div class="nexmoe-post-cover"
-             style="padding-bottom: 24.305555555555554%;">
-            <img data-src="/images/background/xiaomai.jpg" data-sizes="auto" alt="我的第一篇博客" class="lazyload">
-            <h1>我的第一篇博客</h1>
+        <div class="nexmoe-post-cover" style="padding-bottom: NaN%;">
+            <img data-src="\images\process\process.jpg" data-sizes="auto" alt="Linux.md" class="lazyload">
+            <h1>Linux.md</h1>
         </div>
     
 
         <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
-    <a><i class="nexmoefont icon-calendar-fill"></i>2024年11月29日</a>
-    <a><i class="nexmoefont icon-areachart"></i>31 字</a>
-    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
+    <a><i class="nexmoefont icon-calendar-fill"></i>2024年12月09日</a>
+    <a><i class="nexmoefont icon-areachart"></i>2k 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 8 分钟</a>
 </div>
 
         <div class="nexmoe-post-right">
@@ -258,6 +258,8 @@
                         <div class="nexmoe-toc">
                             
                             
+                                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E6%8F%90"><span class="toc-number">1.</span> <span class="toc-text">前提</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BF%AB%E6%8D%B7%E9%94%AE%EF%BC%9A"><span class="toc-number">2.</span> <span class="toc-text">快捷键：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E6%96%BDSSH%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5%EF%BC%9A"><span class="toc-number">3.</span> <span class="toc-text">实施SSH远程连接：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E4%B8%8E%E7%9B%AE%E5%BD%95%E7%AE%A1%E7%90%86%EF%BC%9A"><span class="toc-number">4.</span> <span class="toc-text">文件与目录管理：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%EF%BC%9A"><span class="toc-number">5.</span> <span class="toc-text">系统目录结构：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6%E7%9A%84%E6%AD%A5%E9%AA%A4%EF%BC%9A"><span class="toc-number">6.</span> <span class="toc-text">安装软件的步骤：</span></a></li></ol>
+                            
                         </div>
                     </div>
                 </div>
@@ -265,19 +267,124 @@
         </div>
 
         <article>
-            <ul>
-<li>最开始的学习阶段：数据结构</li>
-<li>一刷leetcode:<a target="_blank" rel="noopener" href="https://www.programmercarl.com/">学习参考代码随想录，里面自带有题目</a></li>
+            <h2 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h2><ul>
+<li>下好虚拟机后，记得每一次做任务前最好做好快照(血泪的教训)</li>
+<li>掌握主机名&#x2F;IP地址等网络信息配置的方法(一定要保证号网络可用，不然后面吃大亏，下点软件都用不来哦。)</li>
 </ul>
+<p> 设置IP地址：</p>
+<ol>
+<li>直接在<code>终端运行nmtui命令</code>配置网络(图形界面自己会了)。修改后使用<code>systemctl restart NetworkManager</code> 命令重启，使IP更改信息生效。</li>
+<li>nmcli命令配置网络，Ubuntu 通过NetworkManager.service(简称NM)进行网络配置，包括动态和静态IP，因此Ubuntu系统必循开启NM，否则无法使用网络，网络配置存储在<code>/etc/NetworkManager/system-connections/</code>目录中。</li>
+</ol>
+<ul>
+<li>用法1：查看IP<br> nmcli</li>
+<li>用法2：查看connection列表<br>nmcli connection show</li>
+<li>用法3：修改ens33网卡，配置方式为manual手动，设置静态IP地址，网卡，DNS信息。</li>
+<li>用法4；立即生效connection<br>nmcli connection up ens33<br>nmcli device reapply ens33<br>nmcli device connect ens33</li>
+</ul>
+<h2 id="快捷键："><a href="#快捷键：" class="headerlink" title="快捷键："></a>快捷键：</h2><ol>
+<li>Ctrl+Alt+T 组合键打开命令行终端</li>
+<li>Ctrl+l 清屏</li>
+<li>打开控制面板的网络适配\连接： Win+R 输入ncpa.cpl</li>
+<li>重启vm虚拟机：reboot</li>
+</ol>
+<h2 id="实施SSH远程连接："><a href="#实施SSH远程连接：" class="headerlink" title="实施SSH远程连接："></a>实施SSH远程连接：</h2><ol>
+<li>前提Linux中有OpenSSH服务(没有自己下)</li>
+<li>在进行远程登陆前，通过<code>systemctl stop ufw</code>和<code>systemctl disable ufw</code> &#96;关闭防火墙功能。</li>
+</ol>
+<h2 id="文件与目录管理："><a href="#文件与目录管理：" class="headerlink" title="文件与目录管理："></a>文件与目录管理：</h2><ul>
+<li>Linux 常用目录功能：</li>
+</ul>
+<ol>
+<li>ls（英文全拼：list files）: 列出目录及文件名</li>
+<li>cd（英文全拼：change directory）：切换目录</li>
+<li>pwd（英文全拼：print work directory）：显示目前的目录</li>
+<li>mkdir（英文全拼：make directory）：创建一个新的目录</li>
+<li>rmdir（英文全拼：remove directory）：删除一个空的目录</li>
+<li>cp（英文全拼：copy file）: 复制文件或目录</li>
+<li>rm（英文全拼：remove）: 删除文件或目录</li>
+<li>mv（英文全拼：move file）: 移动文件与目录，或修改文件与目录的名称</li>
+</ol>
+<h2 id="系统目录结构："><a href="#系统目录结构：" class="headerlink" title="系统目录结构："></a>系统目录结构：</h2><ul>
+<li>！<a href="%5Cimages%5Cprocess%5C%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%9B%AE%E5%BD%95.png">结构图</a></li>
+<li>各部分的作用：</li>
+</ul>
+<ol>
+<li><p>&#x2F;bin：<br>bin 是 Binaries (二进制文件) 的缩写, 这个目录存放着最经常使用的命令。</p>
+</li>
+<li><p>&#x2F;boot：<br>这里存放的是启动 Linux 时使用的一些核心文件，包括一些连接文件以及镜像文件。</p>
+</li>
+<li><p>&#x2F;dev ：<br>dev 是 Device(设备) 的缩写, 该目录下存放的是 Linux 的外部设备，在 Linux 中访问设备的方式和访问文件的方式是相同的。</p>
+</li>
+<li><p>&#x2F;etc：<br>etc 是 Etcetera(等等) 的缩写,这个目录用来存放所有的系统管理所需要的配置文件和子目录。</p>
+</li>
+<li><p>&#x2F;home：<br>用户的主目录，在 Linux 中，每个用户都有一个自己的目录，一般该目录名是以用户的账号命名的，如上图中的 alice、bob 和 eve。</p>
+</li>
+<li><p>&#x2F;lib：<br>lib 是 Library(库) 的缩写这个目录里存放着系统最基本的动态连接共享库，其作用类似于 Windows 里的 DLL 文件。几乎所有的应用程序都需要用到这些共享库。</p>
+</li>
+<li><p>&#x2F;media：<br>linux 系统会自动识别一些设备，例如U盘、光驱等等，当识别后，Linux 会把识别的设备挂载到这个目录下。</p>
+</li>
+<li><p>&#x2F;lost+found：<br>这个目录一般情况下是空的，当系统非法关机后，这里就存放了一些文件。</p>
+</li>
+<li><p>&#x2F;mnt：<br>系统提供该目录是为了让用户临时挂载别的文件系统的，我们可以将光驱挂载在 &#x2F;mnt&#x2F; 上，然后进入该目录就可以查看光驱里的内容了。</p>
+</li>
+<li><p>&#x2F;opt：<br>opt 是 optional(可选) 的缩写，这是给主机额外安装软件所摆放的目录。比如你安装一个ORACLE数据库则就可以放到这个目录下。默认是空的。</p>
+</li>
+<li><p>&#x2F;proc：<br>proc 是 Processes(进程) 的缩写，&#x2F;proc 是一种伪文件系统（也即虚拟文件系统），存储的是当前内核运行状态的一系列特殊文件，这个目录是一个虚拟的目录，它是系统内存的映射，我们可以通过直接访问这个目录来获取系统信息。<br>这个目录的内容不在硬盘上而是在内存里，我们也可以直接修改里面的某些文件，比如可以通过下面的命令来屏蔽主机的ping命令，使别人无法ping你的机器：</p>
+</li>
+</ol>
+<p>echo 1 &gt; &#x2F;proc&#x2F;sys&#x2F;net&#x2F;ipv4&#x2F;icmp_echo_ignore_all<br>12. &#x2F;root：<br>该目录为系统管理员，也称作超级权限者的用户主目录。</p>
+<ol start="13">
+<li><p>&#x2F;sbin：<br>s 就是 Super User 的意思，是 Superuser Binaries (超级用户的二进制文件) 的缩写，这里存放的是系统管理员使用的系统管理程序。</p>
+</li>
+<li><p>&#x2F;selinux：<br> 这个目录是 Redhat&#x2F;CentOS 所特有的目录，Selinux 是一个安全机制，类似于 windows 的防火墙，但是这套机制比较复杂，这个目录就是存放selinux相关的文件的。</p>
+</li>
+<li><p>&#x2F;srv：<br> 该目录存放一些服务启动之后需要提取的数据。</p>
+</li>
+</ol>
+<p>16.&#x2F;sys：<br>这是 Linux2.6 内核的一个很大的变化。该目录下安装了 2.6 内核中新出现的一个文件系统 sysfs 。<br>sysfs 文件系统集成了下面3种文件系统的信息：针对进程信息的 proc 文件系统、针对设备的 devfs 文件系统以及针对伪终端的 devpts 文件系统。<br>该文件系统是内核设备树的一个直观反映。<br>当一个内核对象被创建的时候，对应的文件和目录也在内核对象子系统中被创建。</p>
+<ol start="17">
+<li><p>&#x2F;tmp：<br>tmp 是 temporary(临时) 的缩写这个目录是用来存放一些临时文件的。</p>
+</li>
+<li><p>&#x2F;usr：<br> usr 是 unix system resources(unix 系统资源) 的缩写，这是一个非常重要的目录，用户的很多应用程序和文件都放在这个目录下，类似于 windows 下的 program files 目录。</p>
+</li>
+<li><p>&#x2F;usr&#x2F;bin：<br>系统用户使用的应用程序。</p>
+</li>
+<li><p>&#x2F;usr&#x2F;sbin：<br>超级用户使用的比较高级的管理程序和系统守护程序。</p>
+</li>
+<li><p>&#x2F;usr&#x2F;src：<br>内核源代码默认的放置目录。</p>
+</li>
+<li><p>&#x2F;var：<br>var 是 variable(变量) 的缩写，这个目录中存放着在不断扩充着的东西，我们习惯将那些经常被修改的目录放在这个目录下。包括各种日志文件。</p>
+</li>
+<li><p>&#x2F;run：<br>是一个临时文件系统，存储系统启动以来的信息。当系统重启时，这个目录下的文件应该被删掉或清除。如果你的系统上有 &#x2F;var&#x2F;run 目录，应该让它指向 run。</p>
+</li>
+</ol>
+<ul>
+<li>总结：</li>
+</ul>
+<p>在 Linux 系统中，有几个目录是比较重要的，平时需要注意不要误删除或者随意更改内部文件。</p>
+<p>&#x2F;etc： 上边也提到了，这个是系统中的配置文件，如果你更改了该目录下的某个文件可能会导致系统不能启动。</p>
+<p>&#x2F;bin, &#x2F;sbin, &#x2F;usr&#x2F;bin, &#x2F;usr&#x2F;sbin: 这是系统预设的执行文件的放置目录，比如 ls 就是在 &#x2F;bin&#x2F;ls 目录下的。</p>
+<p>值得提出的是 &#x2F;bin、&#x2F;usr&#x2F;bin 是给系统用户使用的指令（除 root 外的通用用户），而&#x2F;sbin, &#x2F;usr&#x2F;sbin 则是给 root 使用的指令。</p>
+<p>&#x2F;var： 这是一个非常重要的目录，系统上跑了很多程序，那么每个程序都会有相应的日志产生，而这些日志就被记录到这个目录下，具体在 &#x2F;var&#x2F;log 目录下，另外 mail 的预设放置也是在这里。</p>
+<h2 id="安装软件的步骤："><a href="#安装软件的步骤：" class="headerlink" title="安装软件的步骤："></a>安装软件的步骤：</h2><ul>
+<li>以安装gcc为例：</li>
+</ul>
+<ol>
+<li><p>检查是否安装了gcc<br> rpm -qa|grep gcc</p>
+</li>
+<li><p>若是没有显示有安装包，则可以用dnf命令安装所需要的软件包，步骤如下：<br> mount  &#x2F;dev&#x2F;cdrom &#x2F;media</p>
+</li>
+</ol>
 
         </article>
 
         
             
   <div class="nexmoe-post-copyright">
-    <strong>本文作者：</strong>lengjingbuliaoyidian<br>
+    <strong>本文作者：</strong>冷静不了一点<br>
     
-    <strong>本文链接：</strong><a href="http://example.com/2024/11/29/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" title="http:&#x2F;&#x2F;example.com&#x2F;2024&#x2F;11&#x2F;29&#x2F;%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;example.com&#x2F;2024&#x2F;11&#x2F;29&#x2F;%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2&#x2F;</a><br>
+    <strong>本文链接：</strong><a href="http://example.com/2024/12/09/Linux-md/" title="http:&#x2F;&#x2F;example.com&#x2F;2024&#x2F;12&#x2F;09&#x2F;Linux-md&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;example.com&#x2F;2024&#x2F;12&#x2F;09&#x2F;Linux-md&#x2F;</a><br>
 
     
       <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
@@ -289,6 +396,10 @@
 
         <div class="nexmoe-post-meta nexmoe-rainbow">
     
+        <a class="nexmoefont icon-appstore-fill -link" href="/categories/Linux%E5%A4%8D%E4%B9%A0/">Linux复习</a>
+    
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/Linux/" rel="tag">Linux</a>
     
 </div>
 
@@ -1021,7 +1132,7 @@
 <script src="/lib/fancybox/js/jquery.fancybox.min.js"></script>
 
 
-<script src="/js/app.js?v=1735097330761"></script>
+<script src="/js/app.js?v=1735097330755"></script>
 
 <script src="https://lib.baomitu.com/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js"></script>
 <script>
