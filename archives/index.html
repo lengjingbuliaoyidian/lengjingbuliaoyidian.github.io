@@ -31,7 +31,7 @@
   
     <link rel="stylesheet" href="//at.alicdn.com/t/font_2421060_8z08qcz5sq3.css">
   
-  <link rel="stylesheet" href="/css/style.css?v=1736604110117">
+  <link rel="stylesheet" href="/css/style.css?v=1736834621730">
 <meta name="generator" content="Hexo 7.3.0"></head>
 
 <body class="mdui-drawer-body-left">
@@ -253,8 +253,8 @@
         
         <div class="nexmoe-post-meta nexmoe-rainbow">
             <a><i class="nexmoefont icon-calendar-fill"></i>2025年01月05日</a>
-            <a><i class="nexmoefont icon-areachart"></i>2.7k 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 11 分钟</a>
+            <a><i class="nexmoefont icon-areachart"></i>3.4k 字</a>
+            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 14 分钟</a>
         </div>
         
         <article>
@@ -425,6 +425,71 @@
 </code></pre>
 </li>
 </ul>
+<h3 id="强制类型转换"><a href="#强制类型转换" class="headerlink" title="强制类型转换"></a>强制类型转换</h3><ul>
+<li><p>强制类型转换是指将一个数据类型强制转换为其他的数据类型。一般是指，将其它的数据类型转换成为String、Number、Boolean。  </p>
+</li>
+<li><p>转换为String类型：<br>有三种方式：toString()、String()、拼串。</p>
+</li>
+</ul>
+<ol>
+<li><p>toString()：<br>       调用被转换数据类型的toString()方法，该方法不会影响到原变量，它会将转换的结果返回，但是要注意的是：null和undefined这两个值没有toString()方法，如果调用他们的方法会报错。<br><br>                 let a &#x3D;1234<br>                 a&#x3D;a.toString()<br>                 console.log(a)<br>                 console.log(typeof a)</p>
+</li>
+<li><p>String()：<br>      调用该函数，并将被转换的数据作为参数传递给函数，使用String()函数作强制转换时，对于Number和Boolean实际上就是调用toString()方法，但是对于null和undefined，就不会调用toString()方法，而是会将null和undefined直接转换为：”null”、”undefined”。<br><br>                 let a &#x3D;1234<br>                 a&#x3D;String(a)<br>                 console.log(a)<br>                 console.log(typeof a)</p>
+</li>
+<li><p>为任何数据类型<code>+&quot;&quot;</code></p>
+<pre><code>                 let a=1234
+                 a=a+&quot;&quot;
+                 console.log(a)
+                 console.log(typeof a)
+</code></pre>
+</li>
+</ol>
+<ul>
+<li>转换为Number类型：<br>有三个函数可以把非数值转换为数值：Number()、parseInt()、parseFloat()。Number()可以用用来转换任意类型的数据，而后两只能用于转换字符串。</li>
+</ul>
+<ol>
+<li><p>Number()函数：</p>
+<ul>
+<li><p>字符串  –&gt;  数字</p>
+<pre><code>          1.如果是纯数字的字符串，则直接转换为数字
+          2.如果字符串中有非数字的内容，则转换为NaN
+          3.如果是字符串是一个空串或者是一个全是空格的字符串，则转换为0
+</code></pre>
+</li>
+<li><p>Boolean –&gt;数字</p>
+<pre><code>          1.true--&gt;1
+          2.false--&gt;0
+</code></pre>
+</li>
+<li><p>null –&gt;数字</p>
+<pre><code>          null --&gt;0
+</code></pre>
+</li>
+<li><p>undefined –&gt;数字</p>
+<pre><code>          undefined  --&gt;NaN
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p>parseInt()：<br> 把一个字符串转换为一个整数</p>
+</li>
+<li><p>parseFloat():<br> 把一个字符串转换为一个浮点数</p>
+</li>
+</ol>
+<p>注意：</p>
+<pre><code>            如果是对非String类型使用parseInt()或者parseFloat(),它会先将其转换为String然后再操作。
+</code></pre>
+<ul>
+<li>转换为Boolean类型：<br>只使用Boolean()函数</li>
+</ul>
+<ol>
+<li><p>Boolean()函数：</p>
+<ul>
+<li>数字–&gt;Boolean</li>
+</ul>
+</li>
+</ol>
+<p>除了0和NaN，其余都是true<br>    - 字符串–&gt;Boolean<br>    除了空串，其余都是true<br>    - null 和 undefined都会转换为false<br>    - 对象也会转换为true</p>
 <h3 id="控制台输出语句和检测数据类型"><a href="#控制台输出语句和检测数据类型" class="headerlink" title="控制台输出语句和检测数据类型"></a>控制台输出语句和检测数据类型</h3><ul>
 <li>用过<code>typeof</code>关键字检测数据类型<br>typeof运算符可以返回被检测的数据类型。它支持两种语法形式</li>
 </ul>
@@ -488,14 +553,33 @@
 </ul>
 <h3 id="运算符优先级"><a href="#运算符优先级" class="headerlink" title="运算符优先级"></a>运算符优先级</h3><ol>
 <li>小括号</li>
-<li>一元运算符(++ – !)</li>
+<li>一元运算符(++ – !（优先级高）)</li>
 <li>算数运算符(先 * &#x2F; % 后 + -)</li>
 <li>关系运算符(&gt; &gt;&#x3D; &lt; &lt;&#x3D;)</li>
 <li>相等运算符(&#x3D;&#x3D; !&#x3D; &#x3D;&#x3D;&#x3D; !&#x3D;&#x3D;)</li>
 <li>逻辑运算符(先&amp;&amp; 后 ||)</li>
 <li>赋值运算符(&#x3D;)</li>
-<li>逗号运算符(,)</li>
+<li>逗号运算符(,)<!--代码块 --></li>
 </ol>
+<h3 id="条件语句"><a href="#条件语句" class="headerlink" title="条件语句"></a>条件语句</h3><ul>
+<li>含义：通过判断指定表达式的值来决定执行还是跳过某些语句，最基本的语句有：</li>
+</ul>
+<ol>
+<li>if…else</li>
+<li>switch …case(需要注意的是一旦符合case的条件程序会一直运行到结束，所以我们一般会在case中添加break作为语句的结束)</li>
+</ol>
+<h3 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h3><ul>
+<li>含义：只要满足一定的条件将会一直执行，最基本的语句有：</li>
+</ul>
+<ol>
+<li>while</li>
+<li>do …while</li>
+<li>for</li>
+</ol>
+<h3 id="跳转控制"><a href="#跳转控制" class="headerlink" title="跳转控制"></a>跳转控制</h3><ul>
+<li>break：结束最近的一次循环，可以在循环和switch语句中使用</li>
+<li>continue：结束本次循环，执行下一次循环，只能在循环中使用</li>
+</ul>
 
             
         </article>
@@ -1967,7 +2051,7 @@ public int maxSubArray(int[] nums) &#123;
 <script src="/lib/fancybox/js/jquery.fancybox.min.js"></script>
 
 
-<script src="/js/app.js?v=1736604110117"></script>
+<script src="/js/app.js?v=1736834621730"></script>
 
 <script src="https://lib.baomitu.com/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js"></script>
 <script>
@@ -1984,8 +2068,6 @@ public int maxSubArray(int[] nums) &#123;
 
 
 <!-- hexo injector body_end start -->
-<script src="/js/clock.js"></script>
-
 <script src="https://lib.baomitu.com/clipboard.js/2.0.8/clipboard.min.js"></script>
 
 <script src="/lib/codeBlock/codeBlockFuction.js"></script>
@@ -1998,11 +2080,13 @@ public int maxSubArray(int[] nums) &#123;
 
 <link rel="stylesheet" href="/lib/codeBlock/matery.css">
 
-<script src="/js/webapp.js"></script>
+<script src="/js/clock.js"></script>
 
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 
 <script src="/js/search.js"></script>
+
+<script src="/js/webapp.js"></script>
 <!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
 
